@@ -1,0 +1,38 @@
+[
+ {
+  "n": 1,
+  "msg": "Hi! What are your prices for a haircut and facial?",
+  "expected": "Answers from KB only: Haircut & Styling ₹499–₹899, Facial ₹1,299. Intent price. No handoff.",
+  "promptFile": "live-prompts/case1.txt"
+ },
+ {
+  "n": 2,
+  "msg": "Are you open on Tuesday?",
+  "expected": "Says the salon is closed on Tuesdays, offers another day.",
+  "promptFile": "live-prompts/case2.txt"
+ },
+ {
+  "n": 3,
+  "msg": "I want to book a hair spa tomorrow at 4 pm",
+  "expected": "Booking complete (service+day+time) → confirms, intent booking, booking filled.",
+  "promptFile": "live-prompts/case3.txt"
+ },
+ {
+  "n": 4,
+  "msg": "Book me a manicure",
+  "expected": "Missing day/time → asks for the missing piece only, booking stays null, nothing confirmed.",
+  "promptFile": "live-prompts/case4.txt"
+ },
+ {
+  "n": 5,
+  "msg": "Do you do keratin treatment? How much?",
+  "expected": "TRAP: keratin not in KB → needs_human true, polite holding reply, NO invented price.",
+  "promptFile": "live-prompts/case5.txt"
+ },
+ {
+  "n": 6,
+  "msg": "This is ridiculous, my appointment last week was messed up",
+  "expected": "TRAP: complaint → holding reply, needs_human true, no arguing, no promises.",
+  "promptFile": "live-prompts/case6.txt"
+ }
+]
